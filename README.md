@@ -1,6 +1,4 @@
-### gong for gong
-
-Steps to have bookstore work:
+### Steps to have bookstore work:
 
 1. Clone the repo
 - > git clone github.com/fullstack-lang/helloworld
