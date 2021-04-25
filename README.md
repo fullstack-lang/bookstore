@@ -11,7 +11,7 @@ Steps to have bookstore work:
 - > go install
 - > cd ../../..
 
-3. Compile & run hello world
+3. Compile & run bookstore
 - > cd bookstore/go/models; gongc
 
 compilation should last less than a minute ("npm install" is the longuest operation)
@@ -32,7 +32,7 @@ bookstore: Server ready serve on localhost:8080
 ```
 
 
-1. Use hello world
+1. Use bookstore
 - launch browser on http://localhost:8080
 
 ### what you should see
