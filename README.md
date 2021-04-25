@@ -7,9 +7,9 @@ Steps to have bookstore work:
 
 1. Install gongc (the gong compiler)
 - > git clone github.com/fullstack-lang/gong
-- > cd gong/stacks/gong/go/gongc
+- > cd gong/go/gongc
 - > go install
-- > cd ../../../../..
+- > cd ../../..
 
 3. Compile & run hello world
 - > cd bookstore/go/models; gongc
