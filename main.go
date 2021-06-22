@@ -1,13 +1,13 @@
 package main
 
 import (
-	"flag"
-	"log"
-	"os"
-	"fmt"
 	"embed"
+	"flag"
+	"fmt"
 	"io/fs"
+	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-contrib/static"
@@ -18,17 +18,16 @@ import (
 )
 
 var (
-	logDBFlag = flag.Bool("logDB", false, "log mode for db")
+	logDBFlag  = flag.Bool("logDB", false, "log mode for db")
 	logGINFlag = flag.Bool("logGIN", false, "log mode for gin")
-	apiFlag   = flag.Bool("api", false, "it true, use api controllers instead of default controllers")
+	apiFlag    = flag.Bool("api", false, "it true, use api controllers instead of default controllers")
 )
 
 func main() {
 
-	
 	log.SetPrefix("bookstore: ")
 	log.SetFlags(0)
-	
+
 	// parse program arguments
 	flag.Parse()
 
@@ -45,11 +44,7 @@ func main() {
 	// mandatory, otherwise, bizarre errors occurs
 	db.DB().SetMaxOpenConns(1)
 
-	// Provide db variable to controllers
-	r.Use(func(c *gin.Context) {
-		c.Set("db", db) // a gin Context can have a map of variable that is set up at runtime
-		c.Next()
-	})
+	orm.BackRepo.Init(db)
 
 	controllers.RegisterControllers(r)
 
