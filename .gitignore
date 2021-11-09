@@ -6,3 +6,6 @@ bookstore.exe
 bookstore
 go/.DS_Store
 .DS_Store
+embed.go
+go.sum
+
